@@ -15,6 +15,7 @@
 		B2A9A9A5209CD17E0040ACDC /* animatedButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A9A9A4209CD17E0040ACDC /* animatedButtonTests.swift */; };
 		B2A9A9B0209CD17E0040ACDC /* animatedButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A9A9AF209CD17E0040ACDC /* animatedButtonUITests.swift */; };
 		B2A9A9BE209CD1D30040ACDC /* UIViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A9A9BD209CD1D30040ACDC /* UIViewX.swift */; };
+		B2A9A9C2209CE9D30040ACDC /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A9A9C1209CE9D30040ACDC /* Timer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B2A9A9AF209CD17E0040ACDC /* animatedButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animatedButtonUITests.swift; sourceTree = "<group>"; };
 		B2A9A9B1209CD17E0040ACDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2A9A9BD209CD1D30040ACDC /* UIViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewX.swift; sourceTree = "<group>"; };
+		B2A9A9C1209CE9D30040ACDC /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +103,10 @@
 			children = (
 				B2A9A98F209CD17E0040ACDC /* AppDelegate.swift */,
 				B2A9A991209CD17E0040ACDC /* ViewController.swift */,
+				B2A9A9C1209CE9D30040ACDC /* Timer.swift */,
+				B2A9A9BD209CD1D30040ACDC /* UIViewX.swift */,
 				B2A9A993209CD17E0040ACDC /* Main.storyboard */,
 				B2A9A996209CD17E0040ACDC /* Assets.xcassets */,
-				B2A9A9BD209CD1D30040ACDC /* UIViewX.swift */,
 				B2A9A998209CD17E0040ACDC /* LaunchScreen.storyboard */,
 				B2A9A99B209CD17E0040ACDC /* Info.plist */,
 			);
@@ -265,6 +268,7 @@
 				B2A9A992209CD17E0040ACDC /* ViewController.swift in Sources */,
 				B2A9A990209CD17E0040ACDC /* AppDelegate.swift in Sources */,
 				B2A9A9BE209CD1D30040ACDC /* UIViewX.swift in Sources */,
+				B2A9A9C2209CE9D30040ACDC /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

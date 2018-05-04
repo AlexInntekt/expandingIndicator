@@ -42,11 +42,14 @@ class ViewController: UIViewController
         { finished in
             print("\n finished")
             
+            self.runTimer()
             
-            self.insideCounter.text = ""
             
-                UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 0, initialSpringVelocity: 0,  options: [.curveEaseOut], animations:
+                UIView.animate(withDuration: 3, delay: 3, usingSpringWithDamping: 0, initialSpringVelocity: 0,  options: [.curveEaseIn], animations:
                     {
+                        self.insideCounter.alpha = 0
+                        
+                        
                         self.roundIndicator.alpha = 0.4
                         
                         var enlarge = CGAffineTransform.identity
@@ -56,7 +59,7 @@ class ViewController: UIViewController
                 })
                 { finished in
                     
-                    self.roundIndicator.center.x = self.view.center.x
+                    //self.roundIndicator.center.x = self.view.center.x
                     self.roundIndicator.center.y = -100
                     self.insideCounter.text = "3"
                     self.roundIndicator.alpha = 1
@@ -65,6 +68,7 @@ class ViewController: UIViewController
                     enlarge = enlarge.scaledBy(x: 1, y: 1)
                     self.roundIndicator.transform = enlarge;
                     
+                    self.resetButtonTapped()
                     
                     self.animateDispacement()
                 }
@@ -72,7 +76,24 @@ class ViewController: UIViewController
         
     }
 
- 
+    func runTimer()
+    {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(ViewController.updateTimer)), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateTimer()
+    {
+        seconds -= 1     //This will decrement(count down)the seconds.
+        insideCounter.text = "\(seconds)" //This will update the label.
+    }
+    
+    func resetButtonTapped()
+    {
+        timer.invalidate()
+        seconds = 3    //Here we manually enter the restarting point for the seconds, but it would be wiser to make this a variable or constant.
+        insideCounter.text = "\(seconds)"
+        insideCounter.alpha = 1
+    }
 
 }
 
