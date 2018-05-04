@@ -54,8 +54,20 @@ class ViewController: UIViewController
                         
                         self.roundIndicator.transform = enlarge;
                 })
-            
-            
+                { finished in
+                    
+                    self.roundIndicator.center.x = self.view.center.x
+                    self.roundIndicator.center.y = -100
+                    self.insideCounter.text = "3"
+                    self.roundIndicator.alpha = 1
+                    
+                    var enlarge = CGAffineTransform.identity
+                    enlarge = enlarge.scaledBy(x: 1, y: 1)
+                    self.roundIndicator.transform = enlarge;
+                    
+                    
+                    self.animateDispacement()
+                }
         }
         
     }
