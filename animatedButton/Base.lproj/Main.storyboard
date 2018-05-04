@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="animatedButton" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="topRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgk" translatesAutoresizingMaskIntoConstraints="NO" id="pRr-ea-uIv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pRr-ea-uIv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="HX1-zF-lpD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pRr-ea-uIv" secondAttribute="trailing" id="U7a-5N-fZi"/>
+                            <constraint firstItem="pRr-ea-uIv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ubq-qO-0nV"/>
+                            <constraint firstAttribute="bottom" secondItem="pRr-ea-uIv" secondAttribute="bottom" id="zhh-Zv-MPH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="insideCounter" destination="qad-XD-BIg" id="BoJ-0j-y14"/>
+                        <outlet property="roundIndicator" destination="svb-vX-rJp" id="aKt-eb-nHS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="svb-vX-rJp">
+                    <rect key="frame" x="0.0" y="0.0" width="370" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QyH-Vm-kix" customClass="UIViewX" customModule="animatedButton" customModuleProvider="target">
+                            <rect key="frame" x="140" y="19" width="90" height="90"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qad-XD-BIg">
+                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="qad-XD-BIg" firstAttribute="width" secondItem="QyH-Vm-kix" secondAttribute="width" id="2Z5-D0-hdd"/>
+                                <constraint firstItem="qad-XD-BIg" firstAttribute="centerX" secondItem="QyH-Vm-kix" secondAttribute="centerX" id="JzN-IU-FxT"/>
+                                <constraint firstAttribute="height" constant="90" id="TzI-s7-4db"/>
+                                <constraint firstAttribute="width" constant="90" id="bin-nb-aHC"/>
+                                <constraint firstItem="qad-XD-BIg" firstAttribute="height" secondItem="QyH-Vm-kix" secondAttribute="height" id="cfE-lv-T08"/>
+                                <constraint firstItem="qad-XD-BIg" firstAttribute="centerY" secondItem="QyH-Vm-kix" secondAttribute="centerY" id="dmI-RB-wwZ"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="45"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="QyH-Vm-kix" firstAttribute="centerY" secondItem="n1Y-iE-ljq" secondAttribute="centerY" id="4GR-GK-ThL"/>
+                        <constraint firstItem="QyH-Vm-kix" firstAttribute="centerX" secondItem="n1Y-iE-ljq" secondAttribute="centerX" id="q1m-LL-wcq"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="n1Y-iE-ljq"/>
+                </view>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bgk" width="1920" height="1080"/>
+    </resources>
+</document>
