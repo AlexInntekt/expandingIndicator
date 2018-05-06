@@ -38,6 +38,7 @@ class ViewController: UIViewController
         UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.4,  options: [.curveEaseOut], animations:
             {
                 self.roundIndicator.center.y = self.view.center.y
+                 
         })
         { finished in
             print("\n finished")
@@ -45,10 +46,11 @@ class ViewController: UIViewController
             self.runTimer()
             
             
+            
                 UIView.animate(withDuration: 3, delay: 3, usingSpringWithDamping: 0, initialSpringVelocity: 0,  options: [.curveEaseIn], animations:
                     {
                         self.insideCounter.alpha = 0
-                        
+                        //self.insideCounter.font = UIFont (name: "Helvetica Neue", size: 0)
                         
                         self.roundIndicator.alpha = 0.4
                         
@@ -56,20 +58,22 @@ class ViewController: UIViewController
                         enlarge = enlarge.scaledBy(x: 12, y: 12)
                         
                         self.roundIndicator.transform = enlarge;
+                        
+                        
                 })
                 { finished in
-                    
-                    //self.roundIndicator.center.x = self.view.center.x
+                    self.insideCounter.font = UIFont (name: "Helvetica Neue", size: 30)
+
                     self.roundIndicator.center.y = -100
                     self.insideCounter.text = "3"
                     self.roundIndicator.alpha = 1
-                    
+
                     var enlarge = CGAffineTransform.identity
                     enlarge = enlarge.scaledBy(x: 1, y: 1)
                     self.roundIndicator.transform = enlarge;
-                    
+
                     self.resetButtonTapped()
-                    
+
                     self.animateDispacement()
                 }
         }
@@ -84,7 +88,13 @@ class ViewController: UIViewController
     @objc func updateTimer()
     {
         seconds -= 1     //This will decrement(count down)the seconds.
+        
         insideCounter.text = "\(seconds)" //This will update the label.
+        
+        if seconds==0
+        {
+            insideCounter.text = ""
+        }
     }
     
     func resetButtonTapped()
