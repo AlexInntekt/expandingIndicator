@@ -54,7 +54,7 @@ class ViewController: UIViewController
     {
         self.insideCounter.alpha = 0
         
-        UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 0, initialSpringVelocity: 0,  options: [.curveEaseIn], animations:
+        UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0,  options: [.curveEaseIn], animations:
             {
                 self.roundIndicator.alpha = 0.4
                 
