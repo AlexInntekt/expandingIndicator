@@ -54,15 +54,25 @@ class ViewController: UIViewController
     {
         self.insideCounter.alpha = 0
         
-        UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0,  options: [.curveEaseIn], animations:
-            {
-                self.roundIndicator.alpha = 0.4
-                
-                var enlarge = CGAffineTransform.identity
-                enlarge = enlarge.scaledBy(x: 12, y: 12)
-                
-                self.roundIndicator.transform = enlarge;
-                
+        UIView.animate(withDuration: 1, animations:
+        {
+            self.roundIndicator.alpha = 0.4
+
+            var enlarge = CGAffineTransform.identity
+            enlarge = enlarge.scaledBy(x: 12, y: 12)
+
+            self.roundIndicator.transform = enlarge;
+        
+        
+//        UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0,  options: [.curveEaseIn], animations:
+//            {
+//                self.roundIndicator.alpha = 0.4
+//
+//                var enlarge = CGAffineTransform.identity
+//                enlarge = enlarge.scaledBy(x: 12, y: 12)
+//
+//                self.roundIndicator.transform = enlarge;
+        
                 
         })
         { finished in
