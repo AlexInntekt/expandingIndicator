@@ -38,47 +38,52 @@ class ViewController: UIViewController
         UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.4,  options: [.curveEaseOut], animations:
             {
                 self.roundIndicator.center.y = self.view.center.y
-                 
         })
         { finished in
             print("\n finished")
             
             self.runTimer()
+  
+        }
+    }
+    
+    
+    
+    
+    func expand()
+    {
+        self.insideCounter.alpha = 0
+        
+        UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 0, initialSpringVelocity: 0,  options: [.curveEaseIn], animations:
+            {
+                self.roundIndicator.alpha = 0.4
+                
+                var enlarge = CGAffineTransform.identity
+                enlarge = enlarge.scaledBy(x: 12, y: 12)
+                
+                self.roundIndicator.transform = enlarge;
+                
+                
+        })
+        { finished in
+            self.insideCounter.font = UIFont (name: "Helvetica Neue", size: 30)
             
+            self.roundIndicator.center.y = -100
+            self.roundIndicator.alpha = 1
             
+            var enlarge = CGAffineTransform.identity
+            enlarge = enlarge.scaledBy(x: 1, y: 1)
+            self.roundIndicator.transform = enlarge;
             
-                UIView.animate(withDuration: 3, delay: 3, usingSpringWithDamping: 0, initialSpringVelocity: 0,  options: [.curveEaseIn], animations:
-                    {
-                        self.insideCounter.alpha = 0
-                        //self.insideCounter.font = UIFont (name: "Helvetica Neue", size: 0)
-                        
-                        self.roundIndicator.alpha = 0.4
-                        
-                        var enlarge = CGAffineTransform.identity
-                        enlarge = enlarge.scaledBy(x: 12, y: 12)
-                        
-                        self.roundIndicator.transform = enlarge;
-                        
-                        
-                })
-                { finished in
-                    self.insideCounter.font = UIFont (name: "Helvetica Neue", size: 30)
-
-                    self.roundIndicator.center.y = -100
-                    self.insideCounter.text = "3"
-                    self.roundIndicator.alpha = 1
-
-                    var enlarge = CGAffineTransform.identity
-                    enlarge = enlarge.scaledBy(x: 1, y: 1)
-                    self.roundIndicator.transform = enlarge;
-
-                    self.resetButtonTapped()
-
-                    self.animateDispacement()
-                }
+            self.resetButtonTapped()
+            
+            self.animateDispacement()
         }
         
     }
+    
+    
+    
 
     func runTimer()
     {
@@ -91,9 +96,11 @@ class ViewController: UIViewController
         
         insideCounter.text = "\(seconds)" //This will update the label.
         
-        if seconds==0
+        if(seconds<=0)
         {
-            insideCounter.text = ""
+            timer.invalidate()
+            
+            expand()
         }
     }
     
@@ -104,6 +111,11 @@ class ViewController: UIViewController
         insideCounter.text = "\(seconds)"
         insideCounter.alpha = 1
     }
+    
+    
+    
+    
+    
 
 }
 
